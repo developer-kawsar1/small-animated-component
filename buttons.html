@@ -12,7 +12,7 @@
         place-items: center;
         height: 100vh;
       }
-      a{
+     .main_div a{
         display: inline-block;
         padding: 1rem 2rem;
         border: 1px solid indianred;
@@ -25,7 +25,7 @@
         color: orangered;
         
       }
-      a::before{
+   .main_div   a::before{
         position: absolute;
         content: '';
         background: #000;
@@ -39,12 +39,13 @@
         
       }
       
-      a:hover::before{
+     .main_div a:hover::before{
         transform: translateX(0);
         z-index: -1;
       }
-      a:hover{
+    .main_div  a:hover{
         color:#fff;
+        transform: translateY(-3px);
       }
     </style>
 </head>
@@ -53,7 +54,7 @@
 <div class="main_div">
   <a href="#">kawsar</a>
 </div>
-
+<a href="https://github.com/developer-kawsar1/small-animated-component/blob/master/buttons.html">Code link</a>
 </body>
 
 </html>
