@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css" media="all">
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root
+      {
+        --clr:#444;
+      }
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: var(--clr);
+       
+        
+     
+      }
+      .navigation{
+        width: 450px;
+        height: 75px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        position: relative;
+        
+      }
+      .navigation ul{
+        display: flex;
+        width: 350px;
+      }
+      .navigation ul li{
+        list-style: none;
+        position: relative;
+        width: 70px;
+        height: 70px;
+        z-index: 1
+      }
+      .navigation ul li a{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+      }
+  .navigation ul li a .icon{
+    display: block;
+    line-height: 70px;
+    position: relative;
+    position: 1.5em;
+    text-align: center;
+    transition: 0.4s;
+    color: var(--clr);
+  }
+.navigation ul li.active a .icon{
+  transform: translateY(-30px);
+  color: green;
+}
+.navigation ul li a .text{
+  position: absolute; 
+  color: #fff;
+  background: green;
+  font-size:0.75em;
+  font-weight:400;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  transform: translateY(10px);
+  opacity: 0;
+  padding: 2px 7px;
+  
+}
+.navigation ul li.active a .text{
+  opacity: 1;
+  transform: translateY(-4px);
+ 
+  
+  
+}
+.indicator{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  top: -35px;
+  border-radius: 50%;
+  
+  transition: 0.5s;
+  
+}
+.indicator::before{
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  to
+  border-radius: 50%;
+  top: 5px;
+  left: -28px;
+  background: transparent;
+  box-shadow: 15px 18px #fff;
+  
+}
+.indicator::after{
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  
+  border-radius: 50%;
+  top: 5px;
+  right: -28px;
+  background: transparent;
+  box-shadow: -15px 18px #fff;
+  
+}
+.navigation ul li:nth-child(1).active ~ .indicator{
+  transform: translateX(calc(70px *0));
+}
+.navigation ul li:nth-child(2).active ~ .indicator{
+  transform: translateX(calc(70px *1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator{
+  transform: translateX(calc(70px *2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator{
+  transform: translateX(calc(70px *3));
+}
+.navigation ul li:nth-child(5).active ~ .indicator{
+  transform: translateX(calc(70px *4));
+}
+.navigation ul li:nth-child(6).active ~ .indicator{
+  transform: translateX(calc(70px *5));
+}
+.fa{
+  font-size: 25px;
+}
+    </style>
+</head>
+
+<body>
+<div class="navigation">
+  <ul>
+    <li class="list">
+      <a href="magic-navigation.html">
+        <span class="icon">
+          <i class="fa fa-home"></i>
+        </span>
+        <span class="text">Home</span>
+      </a>
+    </li>
+        <li class="list">
+      <a href="service.html">
+        <span class="icon">
+          <i class="fa fa-user"></i>
+        </span>
+        <span class="text">Profile</span>
+      </a>
+    </li>
+        <li class="list">
+          <a href="#">
+            <span class="icon">
+                 <i class="fa fa-image"></i>
+            </span>
+            <span class="text">photos</span>
+          </a>
+        </li>
+            <li class="list">
+              <a href="#">
+                <span class="icon">
+                     <i class="fa fa-envelope"></i>
+                </span>
+                <span class="text">Message</span>
+              </a>
+            </li>
+            
+             <li class="list">
+              <a href="#">
+                <span class="icon">
+                     <i class="fa fa-gear"></i>
+                </span>
+                <span class="text">Settings</span>
+              </a>
+            </li>  
+            <div class="indicator"> </div>
+  </ul>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+
+
+const currentLocation=location.href;
+const list=document.querySelectorAll('.list');
+  
+ 
+
+
+
+
+  
+  
+  
+  function activeLink(){
+      list.forEach((item)=>
+      
+    item.classList.remove('active')
+     
+     )
+  //   this.classList.add('active')
+    
+     
+     
+  } 
+ 
+  
+  list.forEach((item)=>
+  item.addEventListener('click',activeLink))
+</script>
+</body>
+
+</html>
