@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    
+    <style type="text/css" media="all">
+      .main_div{
+        display: grid;
+        place-items: center;
+        height: 100vh;
+      }
+      a{
+        display: inline-block;
+        padding: 1rem 2rem;
+        border: 1px solid indianred;
+        position: relative;
+        transition: all .3s linear;
+        z-index: 1;
+        overflow: hidden;
+        text-decoration: none;
+        font-weight: bold;
+        color: orangered;
+        
+      }
+      a::before{
+        position: absolute;
+        content: '';
+        background: #000;
+        width: 100%;
+        height: 100%;
+        
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        transition: .3s ;
+        
+      }
+      
+      a:hover::before{
+        transform: translateX(0);
+        z-index: -1;
+      }
+      a:hover{
+        color:#fff;
+      }
+    </style>
+</head>
+
+<body>
+<div class="main_div">
+  <a href="#">kawsar</a>
+</div>
+
+</body>
+
+</html>
